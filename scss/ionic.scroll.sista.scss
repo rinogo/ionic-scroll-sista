@@ -2,7 +2,8 @@
 
 //places subheader underneath top tabs.  Don't forget to import ionic scss before this file!
 .tabs-top .bar-subheader {
-  top: $bar-height + $tabs-height;
+  // top: $bar-height + $tabs-height; //Works until ionic-angular@1.3.2
+  top: 44px + 49px; //ionic-angular@1.3.4 removed the scss and only includes css... So, the best we can do is to copy the values for these variables out of 1.3.2's _variables.scss.
 }
 .platform-ios.platform-cordova {
   // iOS has a status bar which sits on top of the header.
@@ -10,7 +11,8 @@
   // if its in Cordova, and set to fullscreen, then disregard the bump.
   &:not(.fullscreen) {
     .tabs-top .bar-subheader {
-      top: $bar-height + $tabs-height + $ios-statusbar-height;
+      // top: $bar-height + $tabs-height + $ios-statusbar-height; //Ditto above
+      top: 44px + 49px + 20px; //Ditto above
     }
   }
 }
